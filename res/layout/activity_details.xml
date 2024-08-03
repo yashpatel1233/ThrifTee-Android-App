@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.DetailsActivity"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:theme="@style/Base.Theme.ThrifTeeApp"
+    >
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="@id/main">
+
+
+
+
+
+
+    <RelativeLayout
+        android:id="@+id/header_bar"
+        style="@style/header_bar_style">
+
+        <ImageButton
+            android:id="@+id/back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/backarrow"
+            android:background="@color/headerbarcolor"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20sp"
+            android:contentDescription="BackButton"
+            android:minHeight="48dp"
+            android:minWidth="48dp"/>
+
+        <TextView
+            style="@style/app_title_header_bar"
+            />
+
+        <ImageButton
+            android:id="@+id/search_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/searchbutton"
+            android:background="@color/headerbarcolor"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20sp"
+            android:contentDescription="SearchButton"
+            android:minHeight="48dp"
+            android:minWidth="48dp"
+            />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/header_bar"
+        app:layout_constraintBottom_toTopOf="@id/options_bar"
+        android:layout_weight="1"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="16dp"
+            android:padding="4dp"
+            >
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/clothing_images"
+                android:layout_width="match_parent"
+                android:layout_height="400sp"/>
+
+            <LinearLayout
+                android:id="@+id/layout_dots"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal" />
+
+            <TextView
+                android:id="@+id/clothing_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TEST"
+                android:fontFamily="@font/inter_semibold"
+                android:textSize="30sp"/>
+
+            <TextView
+                android:id="@+id/clothing_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="price"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                style="@style/fonts_and_margins_Clothing"/>
+
+            <TextView
+                android:id="@+id/clothing_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TESTING"
+                android:textSize="15sp"
+                style="@style/fonts_and_margins_Clothing"
+                android:layout_marginBottom="20sp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@id/main"
+        android:id="@+id/options_bar"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:orientation="horizontal"
+            android:background="@android:color/transparent"
+            >
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_toggle_favourites"
+                android:background="@drawable/roundcorner"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:minHeight="48sp"
+                android:layout_margin="8sp"
+                android:id="@+id/favourite_details_button"
+                app:layout_constraintWidth_percent="0.5"/>
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/cartwhite"
+                android:background="@drawable/roundcorner"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:minHeight="48sp"
+                android:layout_margin="8sp"
+                android:id="@+id/cart_details_button"
+                app:layout_constraintWidth_percent="0.5"
+                />
+
+
+
+        </LinearLayout>
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:menu="@menu/bottom_navigation_menu"
+            app:itemIconSize="40dp"
+            app:itemActiveIndicatorStyle="@color/black"
+            app:itemTextAppearanceActiveBoldEnabled="true"
+            android:background="@color/headerbarcolor"
+            android:layout_gravity="bottom"
+            />
+
+    </LinearLayout>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

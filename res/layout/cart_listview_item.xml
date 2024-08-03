@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp"
+    android:elevation="4dp"
+    app:cardCornerRadius="4dp">
+
+    <RelativeLayout
+        android:id="@+id/cart_relativelayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="16dp">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:layout_width="140sp"
+            android:layout_height="140sp"
+            android:minWidth="120sp"
+            android:minHeight="120sp"
+            android:id="@+id/cart_images"
+            android:layout_margin="4sp"
+            />
+        <LinearLayout
+            android:id="@+id/layout_dots_cart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cart_images"
+            android:layout_marginTop="8dp"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:orientation="horizontal" />
+
+        <TextView
+            android:id="@+id/clothing_title_listview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="clothing"
+            android:layout_margin="4sp"
+            android:textSize="15sp"
+            android:layout_toEndOf="@id/cart_images"
+            android:layout_toStartOf="@id/clothing_price_listview"
+            android:textStyle="bold"
+            style="@style/fonts_and_margins_Clothing"
+            />
+
+        <TextView
+            android:id="@+id/clothing_price_listview"
+            android:layout_margin="4sp"
+            android:textSize="15sp"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="Price"
+            android:textStyle="bold"
+            style="@style/fonts_and_margins_Clothing"/>
+
+        <TextView
+            android:id="@+id/clothing_description_listview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4sp"
+            android:layout_toEndOf="@id/cart_images"
+            android:layout_toStartOf="@id/remove_from_cart_button"
+            android:layout_below="@id/clothing_title_listview"
+            android:textSize="12sp"
+            android:text="TESTINGTESTINudshfuidshfuihfuwehfuhewuhfuihfuhewufhewufhufhwufheuwhfuhfuewhfuwehfuewhfewuifhewuifhewuhfueheuwhfuewfhuiehfewuifhhfuwefheuwhfeuhfeuwhfhuewhfufheufhwhfeufhhfehfuehfuehfGTESTING"
+            android:maxLines="7"
+            style="@style/fonts_and_margins_Clothing"/>
+
+
+
+        <ImageButton
+            android:id="@+id/remove_from_cart_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@id/clothing_price_listview"
+            android:src="@drawable/deletecart"
+            android:background="@color/white"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:minHeight="48dp"
+            android:minWidth="48dp"
+            />
+
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

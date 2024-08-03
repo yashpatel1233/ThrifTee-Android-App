@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.MainActivity"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="@id/main">
+
+    <RelativeLayout
+        android:id="@+id/header_bar"
+        style="@style/header_bar_style"
+        >
+
+        <TextView
+            style="@style/app_title_header_bar"
+            android:fontFamily="@font/inter_semibold"
+            />
+
+        <ImageButton
+            android:id="@+id/search_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/searchbutton"
+            android:background="@color/headerbarcolor"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20sp"
+            android:contentDescription="SearchButton"
+            android:minHeight="48dp"
+            android:minWidth="48dp"
+            />
+
+
+        </RelativeLayout>
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/header_bar"
+        android:layout_weight="1"
+        >
+
+
+            <LinearLayout
+                android:id="@+id/cardViewCategories"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:id="@+id/toppicks_title"
+                    android:text="Top Picks"
+                    android:layout_margin="0dp"
+                    style="@style/Section_Title"
+                    android:layout_marginBottom="0dp"
+                    android:padding="0dp"
+                    />
+
+
+                <GridView
+                    android:id="@+id/gridview_toppicks"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="450dp"
+                    android:numColumns="2"
+                    android:verticalSpacing="8dp"
+                    android:horizontalSpacing="8dp"
+                    android:layout_gravity="center"
+                    />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardViewTops"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="8dp"
+                    android:backgroundTint="@color/black"
+                    >
+
+
+                    <TextView
+                        style="@style/categorys_text_view"
+                        android:text="Tops"
+                        />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardViewBottoms"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="8dp"
+                    android:backgroundTint="@color/black">
+
+                    <TextView
+                        style="@style/categorys_text_view"
+                        android:text="Bottoms"
+                         />
+
+      
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardViewFootwear"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="8dp"
+                    android:backgroundTint="@color/black">
+
+                    <TextView
+
+                        style="@style/categorys_text_view"
+                        android:text="Footwear"
+                         />
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+    </ScrollView>
+
+
+
+
+
+
+
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/main"
+            android:id="@+id/bottom_navigation_layout"
+            >
+            ...
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottom_navigation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:menu="@menu/bottom_navigation_menu"
+                app:itemIconSize="40dp"
+                app:itemActiveIndicatorStyle="@color/black"
+                app:itemTextAppearanceActiveBoldEnabled="true"
+                android:background="@color/headerbarcolor"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
